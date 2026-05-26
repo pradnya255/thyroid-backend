@@ -107,7 +107,8 @@ app.post('/api/thyroid/analyze', async (req, res) => {
   try {
     let analysis, diet;
 
-    if (mcpClient) {
+    // if (mcpClient) {
+    if (false && mcpClient) {
       broadcast({ type: 'progress', step: 1, message: 'Calling MCP analyze_thyroid tool...' });
       analysis = await callMCPTool('analyze_thyroid', { tsh, t3, t4, weight, height, age, gender });
 
